@@ -6,7 +6,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USUARIO")
+@Table(name = "ENDERECO")
 public class Endereco extends AbstractEntidade {
 
 	@Column(name = "LOGRADOURO")
@@ -24,7 +24,7 @@ public class Endereco extends AbstractEntidade {
 	@Column(name = "CEP")
 	private int cep;
 
-	@OneToOne()
+	@OneToOne
 	private Usuario usuario;
 
 	public String getLogradouro() {

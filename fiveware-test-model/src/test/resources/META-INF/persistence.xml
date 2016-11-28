@@ -7,6 +7,7 @@
 	<persistence-unit name="fiveware-test-model">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.model.company.Usuario</class>
+		<class>br.com.model.company.Endereco</class>
 
 		<properties>
 			<!-- dados da conexao -->
