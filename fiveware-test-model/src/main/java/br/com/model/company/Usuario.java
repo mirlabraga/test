@@ -6,25 +6,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "USUARIO")
-public class Usuario {
-
-	@Id
-	@GeneratedValue
-	@Column(name = "ID")
-	private Long id;
+public class Usuario extends AbstractEntidade{
 
 	@Column(name = "NOME_CURTO", nullable = false)
+	@NotEmpty
 	private String nomeCurto;
 
 	@Column(name = "NOME_COMPLETO")
+	@NotEmpty
 	private String nomeCompleto;
 
 	@Column(name = "DT_NASCIMENTO")

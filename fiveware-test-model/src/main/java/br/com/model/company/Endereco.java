@@ -2,19 +2,12 @@ package br.com.model.company;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "USUARIO")
-public class Endereco {
-
-	@Id
-	@GeneratedValue
-	@Column(name = "ID")
-	private Long id;
+public class Endereco extends AbstractEntidade {
 
 	@Column(name = "LOGRADOURO")
 	private String logradouro;
@@ -30,17 +23,9 @@ public class Endereco {
 
 	@Column(name = "CEP")
 	private int cep;
-	
+
 	@OneToOne()
 	private Usuario usuario;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getLogradouro() {
 		return logradouro;
