@@ -24,9 +24,21 @@ public class Endereco extends AbstractEntidade {
 	@Column(name = "CEP")
 	private int cep;
 
+	public Endereco(String logradouro, String bairro, String cidade, String uf,
+			int cep) {
+		super();
+		this.logradouro = logradouro;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.uf = uf;
+		this.cep = cep;
+	}
+
+
 	@OneToOne
 	private Usuario usuario;
 
+	
 	public String getLogradouro() {
 		return logradouro;
 	}

@@ -57,13 +57,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Databases - Uses HSQL by default -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
 		<!-- EhCache -->
 		<dependency>
 			<groupId>javax.cache</groupId>
@@ -191,21 +184,5 @@
 				</plugin> -->
 		</plugins>
 	</build>
-	<reporting>
-		<plugins>
-			<!-- integrate maven-cobertura-plugin to project site -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>${cobertura.version}</version>
-				<configuration>
-					<formats>
-						<format>html</format>
-					</formats>
-					<check />
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
-
+	
 </project>

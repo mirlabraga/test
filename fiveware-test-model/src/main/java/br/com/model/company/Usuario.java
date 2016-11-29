@@ -2,6 +2,7 @@ package br.com.model.company;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -46,12 +47,8 @@ public class Usuario extends AbstractEntidade{
 
 	@Column(name = "SENHA")
 	private String senha;
-
-	@Lob
-	@Column(name = "FOTO", nullable = false, columnDefinition = "mediumblob")
-	private byte[] foto;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="usuario", optional = false)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="usuario", optional = false, cascade=CascadeType.ALL)
 	private Endereco endereco;
 	
 	public Usuario() {
@@ -59,7 +56,7 @@ public class Usuario extends AbstractEntidade{
 	
 	public Usuario(String nomeCurto, String nomeCompleto, Date dataNascimento,
 			Sexo sexo, int cpf, int telefone, int celular, String email,
-			String senha, byte[] foto, Endereco endereco) {
+			String senha, Endereco endereco) {
 		super();
 		this.nomeCurto = nomeCurto;
 		this.nomeCompleto = nomeCompleto;
@@ -70,11 +67,8 @@ public class Usuario extends AbstractEntidade{
 		this.celular = celular;
 		this.email = email;
 		this.senha = senha;
-		this.foto = foto;
 		this.endereco = endereco;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -154,14 +148,6 @@ public class Usuario extends AbstractEntidade{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public byte[] getFoto() {
-		return foto;
-	}
-
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
 	}
 
 	public Endereco getEndereco() {
