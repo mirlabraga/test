@@ -23,7 +23,7 @@ import br.com.repositorio.company.UsuarioRepository;
 @Controller
 class UsuarioService {
 
-    private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "usuarios/createOrUpdateUsuarioForm";
+    private static final String VIEWS_USUARIO_CREATE_OR_UPDATE_FORM = "usuarios/createOrUpdateUsuarioForm";
     private final UsuarioRepository usuarios;
 
 
@@ -41,13 +41,13 @@ class UsuarioService {
     public String initCreationForm(Map<String, Object> model) {
         Usuario usuario = new Usuario();
         model.put("usuario", usuario);
-        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+        return VIEWS_USUARIO_CREATE_OR_UPDATE_FORM;
     }
 
     @RequestMapping(value = "/usuarios/new", method = RequestMethod.POST)
     public String processCreationForm(@Valid Usuario usuario, BindingResult result) {
         if (result.hasErrors()) {
-            return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+            return VIEWS_USUARIO_CREATE_OR_UPDATE_FORM;
         } else {
             this.usuarios.save(usuario);
             return "redirect:/usuarios/" + usuario.getId();
@@ -84,13 +84,13 @@ class UsuarioService {
     public String initUpdateUsuarioForm(@PathVariable("usuarioId") int id, Model model) {
         Usuario usuario = this.usuarios.procurarPorId(id);
         model.addAttribute(usuario);
-        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+        return VIEWS_USUARIO_CREATE_OR_UPDATE_FORM;
     }
 
     @RequestMapping(value = "/usuarios/{usuarioId}/edit", method = RequestMethod.POST)
     public String processUpdateUsuaioForm(@Valid Usuario usuario, BindingResult result, @PathVariable("usuarioId") long usuarioId) {
         if (result.hasErrors()) {
-            return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+            return VIEWS_USUARIO_CREATE_OR_UPDATE_FORM;
         } else {
             usuario.setId(usuarioId);
             this.usuarios.save(usuario);
