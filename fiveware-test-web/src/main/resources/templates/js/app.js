@@ -1,14 +1,14 @@
 var app = angular.module('myApp', ['ngResource']);
 
-app.factory('Person', ['$resource', function ($resource) {
-    return $resource('http://localhost:8080/spring4-1/info/person/:personId', {personId: '@pid'},
+app.factory('Usuario', ['$resource', function ($resource) {
+    return $resource('', {personId: '@pid'},
 	{
 		updatePerson: {method: 'PUT'}
 	}
     );
 }]);
 
-app.controller('PersonController', ['$scope', 'Person', function($scope, Person) {
+app.controller('UsuarioController', ['$scope', 'Person', function($scope, Person) {
     var ob = this;
     ob.persons=[];
     ob.person = new Person(); 
