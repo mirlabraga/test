@@ -1,4 +1,4 @@
-package br.com.model.company;
+package br.com.test.model;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -12,6 +12,10 @@ import org.apache.commons.logging.LogFactory;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import br.com.test.model.Endereco;
+import br.com.test.model.Sexo;
+import br.com.test.model.Usuario;
 
 public class UsuarioTest {
 

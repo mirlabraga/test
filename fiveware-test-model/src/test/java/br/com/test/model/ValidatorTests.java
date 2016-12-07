@@ -1,4 +1,4 @@
-package br.com.model.company;
+package br.com.test.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,6 +11,8 @@ import javax.validation.Validator;
 import org.junit.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+
+import br.com.test.model.Usuario;
 
 public class ValidatorTests {
 

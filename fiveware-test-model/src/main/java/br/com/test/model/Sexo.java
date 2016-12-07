@@ -1,4 +1,4 @@
-package br.com.model.company;
+package br.com.test.model;
 
 public enum Sexo {
 

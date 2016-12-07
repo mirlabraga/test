@@ -1,13 +1,19 @@
-package br.com.model.company;
+package br.com.test.model;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 @Entity
 @Table(name = "ENDERECO")
-public class Endereco extends AbstractEntidade {
+public class Endereco extends AbstractPersistable<Long> implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "LOGRADOURO")
 	private String logradouro;

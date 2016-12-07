@@ -1,5 +1,6 @@
-package br.com.model.company;
+package br.com.test.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,10 +13,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "USUARIO")
-public class Usuario extends AbstractEntidade{
+public class Usuario extends AbstractPersistable<Long> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "NOME_CURTO", nullable = false)
 	@NotEmpty
@@ -67,14 +71,6 @@ public class Usuario extends AbstractEntidade{
 		this.email = email;
 		this.senha = senha;
 		this.endereco = endereco;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getNomeCurto() {
