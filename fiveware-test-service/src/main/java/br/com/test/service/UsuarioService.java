@@ -7,7 +7,7 @@ import br.com.test.model.Usuario;
 public interface UsuarioService {
 	
      List<Usuario> getAll();
-     Usuario findById(int id);
+     Usuario findById(Long id);
      void saveUsuario(Usuario usuario);
-     void deleteUsuario(int id);
+     void deleteUsuario(Long id);
 }
